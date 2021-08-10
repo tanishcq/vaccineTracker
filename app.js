@@ -11,7 +11,7 @@ const reload = document.getElementById('reload-button')
 
 // const axios = require('axios');
 
-let arr; 
+let arr,temp = 0;
 
 let costs, api = "";
 date.addEventListener('change', () => {
@@ -51,10 +51,15 @@ function extractData(inboundData){
     d2.innerHTML = `<b>Dose 2:</b> ${data.available_capacity_dose2}`;
     from.innerHTML = `<b>Timing:</b> ${data.from}` 
     to.innerHTML = ` <b>to</b> ${data.to}`
-    if (parseInt(data.fee) == 0)
+    if (parseInt(data.fee) == 0){
         price.innerHTML = "<b>Free</b>"
-    else
+        price.style.backgroundColor = "#00bb2f"
+    }
+        
+    else{
         price.innerHTML = `<b>Fee:</b> ${data.fee}`;
+        price.style.backgroundColor = "#00e1ff"
+    }
 
     //Styles
     if (parseInt(data.available_capacity_dose1) > 0)
@@ -68,7 +73,6 @@ function extractData(inboundData){
     d2.style.backgroundColor = "#F55C47" 
 
     vaccine.style.color = "#3C8DAD"
-    price.style.backgroundColor = "#00e1ff"
 
     //Appending Datablocks to container
     slot.append(name);
@@ -85,6 +89,14 @@ function extractData(inboundData){
     slot.classList.add("slot", "col", "p-1");
     d1.classList.add('p1');
     d2.classList.add('p2');
+    price.style.width = '100%';
+    temp++;
+  }
+  if(temp == 0){
+    let noResult = document.createElement('div');
+    noResult.classList.add('noResult');
+    noResult.innerHTML = `No free slots for the selected parameters :(`;
+    displayData.append(noResult);
   }
 }
 
