@@ -48,7 +48,7 @@ function extractData(inboundData){
         max_age.innerHTML = `<b>Max Age:</b> ${data.max_age_limit}`
     min_age.innerHTML = `<b>Min Age:</b> ${data.min_age_limit}`;
     d1.innerHTML = `<b>Dose 1:</b> ${data.available_capacity_dose1}`;
-    d2.innerHTML = `<b>Dose 1:</b> ${data.available_capacity_dose2}`;
+    d2.innerHTML = `<b>Dose 2:</b> ${data.available_capacity_dose2}`;
     from.innerHTML = `<b>Timing:</b> ${data.from}` 
     to.innerHTML = ` <b>to</b> ${data.to}`
     if (parseInt(data.fee) == 0)
