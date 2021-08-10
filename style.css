@@ -56,8 +56,7 @@ label{
     align-items: center;
     justify-content: center;
     background-color: rgb(231, 231, 231);
-    width: 48%;
-    display: inline-block;
+    width: 50%;
     border: 3px solid #b6b6b6;
     border-radius: 20px;
     -webkit-border-radius: 20px;
@@ -100,3 +99,38 @@ footer{
     background-color: rgb(29, 29, 29);
 }
 
+@media  (max-width: 626px){
+    .heading-main h1{
+        font-size: 2rem;
+        font-weight: 300;
+    }
+
+    .p1{
+        border-radius: 0;
+        width: 100%;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+    }
+    .p2{
+        border-radius: 0;
+        width: 100%;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        -ms-border-radius: 0;
+        -o-border-radius: 0;
+    }
+    .slot{
+       width: 90%; 
+    }
+    .data-input{
+        width: 90%;
+    }
+}
+
+@media (max-width: 330px){
+    .input-items{
+        font-size:xx-small;
+    }
+}
